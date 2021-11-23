@@ -1,4 +1,4 @@
-package com.model.mapper.demo;
+package com.model.mapper.demo.mocks;
 
 import com.model.mapper.demo.entity.Person;
 

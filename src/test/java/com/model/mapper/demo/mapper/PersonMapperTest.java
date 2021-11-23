@@ -4,15 +4,15 @@ import com.model.mapper.demo.dto.PersonDto;
 import com.model.mapper.demo.entity.Person;
 import org.junit.jupiter.api.Test;
 
-import static com.model.mapper.demo.PersonMock.getBasicPerson;
-import static org.junit.Assert.assertEquals;
+import static com.model.mapper.demo.mocks.PersonMock.getBasicPerson;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class PersonMapperTest {
 
     @Test
     public void shouldMapPersonToPersonDto() {
-        // 1. utworznie obiektu Person
+        // 1. utworzenie obiektu Person
         // 2. wywołanie mappera, który zwróci PersonDto
         // 3. porównanie wartości Person i PersonDto
 
