@@ -4,6 +4,7 @@ import com.model.mapper.demo.dto.PersonDto;
 import com.model.mapper.demo.entity.Person;
 import org.junit.jupiter.api.Test;
 
+import static com.model.mapper.demo.mocks.MockedValues.*;
 import static com.model.mapper.demo.mocks.PersonMock.getBasicPerson;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -24,9 +25,9 @@ public class PersonMapperTest {
         final PersonDto personDto = personMapper.map(person, PersonDto.class);
 
         // then
-        assertEquals(person.getPersonId(), personDto.getPersonId());
-        assertEquals(person.getFirstName(), personDto.getFirstName());
-        assertEquals(person.getSurname(), personDto.getLastName());
+        assertEquals(ID, personDto.getPersonId());
+        assertEquals(FIRST_NAME, personDto.getFirstName());
+        assertEquals(LAST_NAME, personDto.getLastName());
     }
 
     @Test
@@ -35,15 +36,17 @@ public class PersonMapperTest {
         PersonMapper personMapper = new PersonMapper();
 
         PersonDto personDto = new PersonDto();
-        personDto.setPersonId(1L);
-        personDto.setFirstName("ABC");
-        personDto.setLastName("DEF");
+        personDto.setPersonId(ID);
+        personDto.setFirstName(FIRST_NAME);
+        personDto.setLastName(LAST_NAME);
 
         // when
         Person person = personMapper.map(personDto, Person.class);
 
         // then
-        assertEquals(personDto.getPersonId(), person.getPersonId());
+        assertEquals(ID, person.getPersonId());
+        assertEquals(FIRST_NAME, person.getFirstName());
+        assertEquals(LAST_NAME, person.getSurname());
 
     }
 
